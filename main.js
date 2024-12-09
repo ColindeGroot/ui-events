@@ -27,9 +27,72 @@ interaction.addEventListener('animationend', jumpHandler)
 
 // Stap 1: querySelector
 // let bibberLink = document.querySelector...
+let rotateLink = document.querySelector("a[href='#frontend']");
 
 // Stap 2: addEventListener
 // bibberLink.addEventListener...
+rotateLink.addEventListener('dblclick', rotateFunction)
 
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 // bibberLink.classList.toggle...
+function rotateFunction() {
+  rotateLink.classList.toggle('rotate')
+}
+
+//button 2 (onhover)
+let moveLink = document.querySelector("a[href='#design']");
+
+moveLink.addEventListener('mouseover', moveFunction)
+
+function moveFunction() {
+  moveLink.classList.toggle('move')
+}
+
+
+//button 3 (focus)
+let focus = document.querySelector("a[href='#and']");
+
+focus.addEventListener('focus', dissapear)
+focus.addEventListener('focusout', reapear)
+
+function dissapear() {
+  focus.classList.add('focus')
+}
+
+function reapear() {
+  focus.classList.remove('focus')
+}
+
+// button 4 (background animation)
+let bgAnimation = document.querySelector("a[href='#development']");
+
+bgAnimation.addEventListener('click', playAnimation)
+
+function playAnimation() {
+  bgAnimation.classList.toggle("bgAnimation")
+}
+
+//button 5
+// querySelector('span') -> .textContent
+
+let counterButton = document.querySelector("a[href='#sprint-5']");
+let countElement = document.querySelector("#count");
+
+let count = parseInt(countElement.textContent);
+
+counterButton.addEventListener('keyup', (event) => {
+  if (event.key === "ArrowUp") { 
+    count += 1;
+    countElement.textContent = count;
+  } 
+  else if (event.key === "ArrowDown") {
+    count -= 1;
+    countElement.textContent = count;
+  }
+
+  });
+
+
+// button 6 
+
+
